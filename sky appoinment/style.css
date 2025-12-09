@@ -1,0 +1,578 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f3f6fb;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+/* Generic */
+.section {
+  padding: 4.5rem 5vw;
+}
+
+.section-light {
+  background: #ffffff;
+}
+
+.section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 5vw;
+  background: rgba(243, 246, 251, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #fb7185);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.logo-sub {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 0.88rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0f172a;
+  opacity: 0.7;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #0f172a;
+}
+
+.nav-right {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.nav-login {
+  border: none;
+  background: transparent;
+  font-size: 0.86rem;
+  cursor: pointer;
+  color: #0f172a;
+  opacity: 0.7;
+}
+
+.nav-login:hover {
+  opacity: 1;
+}
+
+.nav-signup {
+  border: none;
+  cursor: pointer;
+  font-size: 0.86rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: #ff4f79;
+  color: #ffffff;
+  font-weight: 500;
+  box-shadow: 0 15px 30px rgba(248, 113, 113, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.nav-signup:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 20px 40px rgba(248, 113, 113, 0.45);
+}
+
+/* HERO */
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 5vw 4.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  gap: 2.8rem;
+  align-items: center;
+}
+
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.74rem;
+  margin-bottom: 1.3rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #0284c7;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 2.7vw + 1rem, 2.8rem);
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 0.7rem;
+}
+
+.hero-accent {
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  color: #64748b;
+  margin-bottom: 1.6rem;
+}
+
+.hero-actions {
+  margin-bottom: 1.8rem;
+}
+
+.btn-primary {
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #fb7185);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 18px 35px rgba(56, 189, 248, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 22px 45px rgba(56, 189, 248, 0.45);
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}
+
+.stat-number {
+  display: block;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* ONLY IMAGE CUTOUT (no card) */
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+.hero-cutout-image {
+  width: 520px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 85px;            /* curved corner cutout */
+  background: none;
+  border: none;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18); /* optional depth */
+  transform: translateY(10px);   /* little premium lift */
+}
+
+
+/* image ko thoda zoom karke crop kar diya – wire nicely dikh jayega */
+.hero-image {
+  display: block;
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(-10%);   /* left side ki taraf slide, jaise SimplyBook me */
+}
+
+/* chhoti screen par height kam kar do */
+@media (max-width: 960px) {
+  .hero-image-card {
+    width: 320px;
+    height: 320px;
+    border-radius: 50px;
+  }
+}
+
+
+.hero-image-tag {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  backdrop-filter: blur(6px);
+}
+
+/* SECTION HEADER */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+
+.section-header p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* FEATURES STRIP */
+.features-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+
+.feature-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.feature-item p {
+  font-size: 0.86rem;
+  color: #64748b;
+}
+
+/* LAYOUTS */
+.layout-two {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  gap: 1.8rem;
+}
+
+.layout-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* FORM */
+.form-title {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.form-group {
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-separator {
+  border: none;
+  border-top: 1px dashed #e2e8f0;
+  margin: 0.8rem 0 0.9rem;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.checkbox input {
+  width: 14px;
+  height: 14px;
+}
+
+.form-msg {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.form-msg.error {
+  color: #e11d48;
+}
+
+.form-msg.success {
+  color: #16a34a;
+}
+
+/* INFO / APPOINTMENTS */
+.info-list {
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  color: #64748b;
+}
+
+.info-list li {
+  margin-bottom: 0.4rem;
+}
+
+.info-highlight {
+  margin-top: 0.8rem;
+  font-size: 0.84rem;
+  color: #0f172a;
+  background: #fef9c3;
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #facc15;
+}
+
+.appointments-card h3 {
+  font-size: 1rem;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: #0ea5e9;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.appointment-item {
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 0.6rem 0.8rem;
+  background: #f8fafc;
+  font-size: 0.82rem;
+}
+
+.appointment-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.appointment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+/* CONTACT */
+.contact-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 0.8rem;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  margin-bottom: 0.4rem;
+  color: #64748b;
+}
+
+.map-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map-placeholder {
+  height: 220px;
+  border-radius: 18px;
+  border: 1px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.84rem;
+  color: #94a3b8;
+}
+
+/* FOOTER */
+.footer {
+  padding: 1.1rem 5vw 1.4rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-right {
+    order: -1;
+    justify-content: center;
+  }
+
+  .layout-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 0.3rem;
+  }
+
+  .section {
+    padding-inline: 1.3rem;
+  }
+
+  .hero {
+    padding-inline: 1.3rem;
+  }
+
+  .grid-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

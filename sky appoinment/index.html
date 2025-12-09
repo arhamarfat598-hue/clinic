@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MediPulse Clinic | Online Appointment Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- TOP BAR / NAV -->
+  <header class="nav">
+    <div class="nav-left">
+      <div class="logo-mark">MP</div>
+      <div class="logo-text">
+        <span class="logo-title">MediPulse Clinic</span>
+        <span class="logo-sub">Health & Diagnostic Centre</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#book">Book Appointment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="nav-login">Log in</button>
+      <button class="nav-signup" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+        Book an Appointment
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (landing like screenshot) -->
+  <main id="home" class="hero">
+    <div class="hero-left">
+      <!-- small badge like COVID vaccination -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        COVID vaccination & health check packages available
+      </div>
+
+      <h1 class="hero-title">
+        Medical & Health Centre<br />
+        <span class="hero-accent">Appointment Booking</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Book your clinic visit in a few clicks. Choose your doctor, pick a date & time,
+        and get instant confirmation – without waiting in long queues.
+      </p>
+
+      <!-- Only ONE button: Book an Appointment -->
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+          Book an Appointment
+        </button>
+      </div>
+
+      <!-- Small stats row (instead of Capterra / GetApp) -->
+      <div class="hero-stats">
+        <div>
+          <span class="stat-number">25K+</span>
+          <span class="stat-label">Patients treated</span>
+        </div>
+        <div>
+          <span class="stat-number">15</span>
+          <span class="stat-label">Specialist doctors</span>
+        </div>
+        <div>
+          <span class="stat-number" id="hero-next-slot">Today</span>
+          <span class="stat-label">Next available slot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side image: stethoscope + pulse wire (BP machine) -->
+    <div class="hero-right">
+  <img src="bg.png.jpg" alt="Clinic tools" class="hero-cutout-image" />
+</div>
+  </main>
+
+  <!-- SIMPLE FEATURES STRIP -->
+  <section id="features" class="section section-light">
+    <div class="section-inner features-row">
+      <div class="feature-item">
+        <h3>Online Appointment</h3>
+        <p>Patients book their visit in advance with preferred doctor & time.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Automatic Slot Control</h3>
+        <p>Morning / evening slots per doctor – no double booking in UI.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Clinic Friendly</h3>
+        <p>No payment gateway required. Patient pays at clinic counter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK APPOINTMENT -->
+  <section id="book" class="section">
+    <div class="section-inner">
+      <header class="section-header">
+        <h2>Book Your Clinic Appointment</h2>
+        <p>Fill the form below and get instant confirmation on screen.</p>
+      </header>
+
+      <div class="layout-two">
+        <!-- FORM -->
+        <form id="appointment-form" class="card form">
+          <h3 class="form-title">Patient details</h3>
+
+          <div class="form-group">
+            <label for="patientName">Full name</label>
+            <input type="text" id="patientName" placeholder="Enter patient name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Mobile number</label>
+            <input type="tel" id="phone" placeholder="10 digit mobile number" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" placeholder="you@example.com" />
+          </div>
+
+          <hr class="form-separator" />
+
+          <h3 class="form-title">Appointment details</h3>
+
+          <div class="grid-two">
+            <div class="form-group">
+              <label for="doctor">Doctor</label>
+              <select id="doctor" required></select>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Visit type</label>
+              <select id="service" required>
+                <option value="">Select</option>
+                <option value="Consultation">New Consultation</option>
+                <option value="Follow-up">Follow-up Visit</option>
+                <option value="Health Checkup">Full Health Checkup</option>
+                <option value="Vaccination">Vaccination</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-two">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" required />
+            </div>
+            <div class="form-group">
+              <label for="timeSlot">Time slot</label>
+              <select id="timeSlot" required>
+                <option value="">Select time slot</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes for doctor (optional)</label>
+            <textarea id="notes" rows="3" placeholder="Symptoms, duration, medicines, etc."></textarea>
+          </div>
+
+          <div class="form-footer">
+            <label class="checkbox">
+              <input type="checkbox" id="whatsappUpdates" checked />
+              <span>Send booking details on WhatsApp</span>
+            </label>
+
+            <button type="submit" class="btn-primary">
+              Confirm Appointment
+            </button>
+          </div>
+
+          <p id="form-error" class="form-msg error"></p>
+          <p id="form-success" class="form-msg success"></p>
+        </form>
+
+        <!-- RIGHT SIDE INFO + UPCOMING APPOINTMENTS -->
+        <div class="layout-column">
+          <div class="card info-card">
+            <h3>How it works</h3>
+            <ol class="info-list">
+              <li>Choose doctor, date & time.</li>
+              <li>Fill patient details & confirm.</li>
+              <li>Show confirmation SMS / screen at reception.</li>
+              <li>Pay consultation fee at the clinic.</li>
+            </ol>
+            <div class="info-highlight">
+              Please arrive <strong>10 minutes</strong> before your selected slot and
+              bring previous reports & prescriptions.
+            </div>
+          </div>
+
+          <div class="card appointments-card">
+            <div class="appointments-header">
+              <h3>Appointments on this device</h3>
+              <button class="link-button" onclick="clearAppointments()">Clear all</button>
+            </div>
+            <div id="appointments-list" class="appointments-list">
+              <!-- JS will fill -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" class="section section-light">
+    <div class="section-inner layout-two">
+      <div class="card contact-card">
+        <h3>Clinic details</h3>
+        <p>
+          MediPulse Multispeciality Clinic<br />
+          Rashid Mamu Complex, Beed Bypass Road<br />
+          Aurangabad, Maharashtra – 431001
+        </p>
+        <div class="contact-row">
+          <span>Phone</span>
+          <strong>+91-98765-43210</strong>
+        </div>
+        <div class="contact-row">
+          <span>Email</span>
+          <strong>care@medipulseclinic.in</strong>
+        </div>
+        <div class="contact-row">
+          <span>Timings</span>
+          <strong>Mon – Sun · 10:00 AM – 9:00 PM</strong>
+        </div>
+      </div>
+
+      <div class="card map-card">
+        <h3>Location map</h3>
+        <div class="map-placeholder">
+          <!-- yaha real Google Map iframe laga sakte ho -->
+          <span>Embed Google Maps here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> MediPulse Clinic. All rights reserved.</div>
+    <div>Designed & developed by ArfatX Dev</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
